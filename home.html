@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap" rel="stylesheet">
+    
+<title>Home</title>
+</head>
+<body>
+  <script>
+    /*
+    callback function for autocomplete search bar
+    */
+    let autocomplete;
+    function initAutocomplete(){
+        autocomplete = new google.maps.places.Autocomplete(
+          document.getElementById('autocomplete'),{
+            types: [],
+            componentRestrictions: {'country':['AU']},
+            fields: ['place_id', 'geometry', 'name']
+          }
+        )
+      }
+  </script>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <header class="mdl-layout__header" style="background-color:#02728A;">
+        <div class="mdl-layout__header-row" style="justify-content: center; padding:0px">
+            <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="" style="font-family: 'Advent Pro', sans-serif; font-size: 20px; text-decoration: underline;">Home</a>
+            <a class="mdl-navigation__link" href="map.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Map</a>
+            <a class="mdl-navigation__link" href="rules.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Restrictions</a>
+            <a class="mdl-navigation__link" href="testing.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Covid Testing</a>
+            </nav>
+        </div>
+        </header>
+    </div>
+
+    <br><br><br>
+
+  <dialog class="mdl-dialog" style="width:100%">
+    <h4 class="mdl-dialog__title">Provide your current home address</h4>
+    <div class="mdl-dialog__content">
+      <p>
+        Providing your residential address allows for a personally tailored in-app experience
+      </p>
+    </div>
+    <div class="mdl-dialog__actions">
+
+      <input id="autocomplete" placeholder="Your home address..." type="text">
+      <button class="mdl-button mdl-js-button mdl-js-ripple-effect" onclick='exitDialog()'>
+        Done
+      </button>
+      </div>
+    </dialog>
+
+
+    <!-- Wide card with share menu button -->
+    <style>
+    .demo-card-wide.mdl-card {
+      width: 100%;
+    }
+    .demo-card-wide > .mdl-card__title {
+      color: #02728A;
+      height: 15%;
+      /* background: url('../assets/demos/welcome_card.jpg') center / cover;  */
+    }
+    .demo-card-wide > .mdl-card__menu {
+      color: rgb(109, 107, 107);
+    }
+    </style>
+
+    <div id='output'></div>
+
+    <script src='js/shared.js'></script>
+    <script src='js/home.js'></script>
+    <script src='js/mapsetup.js'></script>
+    
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDm6YmPrANaGrfBgouWBM0o1axvB9tOS38&libraries=places&callback=initAutocomplete"
+    async defer
+  ></script>
+    
+
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+<title>Lockdown rules</title>
+</head>
+<body style='background-image: linear-gradient(white,  #02728A);'>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="text-align: center;"> <!--idk why but i needed 101% here otherwise theres a white space at the side-->
+        <header class="mdl-layout__header" style="background-color:#02728A;">
+        <div class="mdl-layout__header-row" style="justify-content: center; padding:0px">
+            <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="home.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Home</a>
+            <a class="mdl-navigation__link" href="map.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Map</a>
+            <a class="mdl-navigation__link" href="" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;  text-decoration: underline;">Restrictions</a>
+            <a class="mdl-navigation__link" href="testing.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Covid Testing</a>
+            </nav>
+        </div>
+        </header>
+    
+
+    <div class="textContents">
+
+    <h2 style="text-align: center; font-size: 30px; font-family: 'Advent Pro', sans-serif; font-weight: bolder;" id="heading"></h2>
+    <ul class="demo-list-three mdl-list" id="ruleList" style='text-align: left;'></ul>
+    </div>
+
+    </div>
+
+  
+  <div class="controls" style='position: absolute; right: 0; bottom: 0; padding: 10px;'> <!--put at bottom left of page-->
+    <button id="play" onclick="playSound()" 
+    style="margin: 0 10px;border: none;background: none; float: right; background-color: #055b6e; color: white;" class="mdl-button mdl-js-button mdl-button--fab">
+        <i class="material-icons">microphone</i>
+    </button>
+
+    
+  </div>
+
+  <div style="position: absolute; left: 10; bottom: 0; padding: 10px;">
+    <a href="adminLogin.html?#" style='text-decoration: none;'><button class="button-60" style="background-color: #055b6e;
+     border: none; font-family: 'Advent Pro', sans-serif; color: white; height: 50px; font-size: 17px;">
+    Admin
+      </button></a>
+  </div>
+
+
+
+
+  
+
+  <div id="snackbar" class="mdl-js-snackbar mdl-snackbar">
+    <div class="mdl-snackbar__text"></div>
+    <button class="mdl-snackbar__action" type="button"></button>
+  </div>
+<!-- Firebase stuff -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-database.js"></script>
+
+<script src="js/shared.js"></script>
+<script src="js/rules.js"></script>
+
+
+</body>
+</html>

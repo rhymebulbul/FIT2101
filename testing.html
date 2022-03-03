@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/nav.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+<title>Lockdown rules</title>
+</head>
+<body style='background-image: linear-gradient(white,  #02728A);'>
+
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" style="text-align: center;"> <!--idk why but i needed 101% here otherwise theres a white space at the side-->
+        <header class="mdl-layout__header" style="background-color:#02728A;">
+        <div class="mdl-layout__header-row" style="justify-content: center; padding:0px">
+            <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="home.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Home</a>
+            <a class="mdl-navigation__link" href="map.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Map</a>
+            <a class="mdl-navigation__link" href="rules.html" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;">Restrictions</a>
+            <a class="mdl-navigation__link" href="" style="font-family: 'Advent Pro', sans-serif; font-size: 20px;  text-decoration: underline;">Covid Testing</a>
+            </nav>
+        </div>
+        </header>
+    
+
+    <div class="textContents" style="text-align: left; font-size: 25px; font-family: 'Advent Pro', sans-serif; font-weight: bolder; padding:10px;" id="heading">
+    
+    <div class="p-2" style="float:left;" id = "quiz">
+        <form onsubmit="return submit()">
+        <div>
+        <input type="checkbox" name="question1" id="question1" />
+        <label for="question1">Do you live in a covid hotspot? (Check the map page to identify hotspots) </label>
+        </div><br>
+        <div>
+        <input type="checkbox" name="question2" id="question2" value="question2"/>
+        <label for="question2">Do you have a cough, sore throat, runny nose, shortness of breath or fever?</label>
+        </div><br>
+        <div>
+        <input type="checkbox" name="question3" id="question3" value="question3"/>
+        <label for="question3">Have you been in close contact with any confirmed cases within the past 14 days?</label>
+        </div><br>
+        <div>
+        <input type="checkbox" name="question4" id="question4" value="question4"/>
+        <label for="question4">Have you travelled outside of Victoria interstate or internationally within the past 14 days?</label>
+        </div><br>
+        <div>
+        <input type="checkbox" name="question4" id="question4" value="question4"/>
+        <label for="question4">Have you been instructed by SMS or your workplace to get a covid test?</label>
+        </div><br>
+          <div>
+            <input id="clickMe" type="button" class='button-32' value="confirm" onclick="displayData(getTesting()); remove()" />
+          </div>
+        </form>
+      </div>
+
+    </div>
+    <ul class="demo-list-three mdl-list" id="testSites" style='text-align: left;'></ul>
+
+  
+
+    <script src="js/testing.js"></script>
+
+</body>
+</html>
