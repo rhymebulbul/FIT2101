@@ -1,0 +1,6 @@
+#131265 darkest
+#044242 kinda ugly
+#02728A lightest
+#055b6e a tiny bit darker than above (detailing on gradient)
+
+#7c8d91 a nice grey
